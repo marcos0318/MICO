@@ -55,8 +55,15 @@ def eval(eval_loader, model, tokenizer, criterion, opt):
         if idx % 100 == 0:
             print('eval batch: ', idx)
 
-        print(anchor)
-        print(pos)
+        # print(anchor)
+        print(anchor[0])
+        print(len(anchor))
+
+        # print(pos)
+
+        print(pos[0])
+        print(len(pos))
+   
         with torch.no_grad():
             data_time.update(time.time(), - end)
 
