@@ -6,16 +6,16 @@ from sklearn.metrics.pairwise import cosine_similarity
 
 path_dir = 'ckpts_conceptnet/k2/roberta_large'
 
-with open('./{}/all_heads_test.pkl'.format(path_dir), 'rb') as f:
+with open('./{}/CN_heads_test.pkl'.format(path_dir), 'rb') as f:
     arr_heads_test = pickle.load(f)
 
-with open('./{}/all_tails_test.pkl'.format(path_dir), 'rb') as f:
+with open('./{}/CN_tails_test.pkl'.format(path_dir), 'rb') as f:
     arr_tails_test = pickle.load(f)
 
-with open('./{}/all_tails_train.pkl'.format(path_dir), 'rb') as f:
+with open('./{}/CN_tails_train.pkl'.format(path_dir), 'rb') as f:
     arr_tails_train = pickle.load(f)
 
-with open('./{}/all_tails_valid.pkl'.format(path_dir), 'rb') as f:
+with open('./{}/CN_tails_valid.pkl'.format(path_dir), 'rb') as f:
     arr_tails_valid = pickle.load(f)
 
 dicts = defaultdict(list)
