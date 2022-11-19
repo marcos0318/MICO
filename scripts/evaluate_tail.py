@@ -33,6 +33,8 @@ def parse_option():
     parser.add_argument('--testfile', type=str, default='../preprocess/ATOMIC-Ind-train.txt', \
                         help='test file path')
 
+    parser.add_argument('--dropout', action='store_true', help='use dropout for hidden feature')
+
     opt = parser.parse_args()
 
     return opt
@@ -114,7 +116,7 @@ def main():
 
     print('loading model ...')
 
-    model = LModel(opt.model)
+    model = LModel(opt.model, opt.dropout)
     pre_model = torch.load(os.path.join(opt.save_folder, 'best_model.pth'))
     print(pre_model.keys())
     model.load_state_dict(pre_model['model'])
