@@ -1,6 +1,6 @@
 # train/dev/test
 
-CUDA_VISIBLE_DEVICES=0 python evaluate_tail.py --save_folder ./ckpts_conceptnet/k2/roberta_large \
+CUDA_VISIBLE_DEVICES=1 python evaluate_tail.py --save_folder ./ckpts_conceptnet/k2/roberta_large \
     --max_seq_length 32 \
     --temp 0.07 \
     --testfile ./preprocess/CN82k-Ind-train.txt \
@@ -8,7 +8,7 @@ CUDA_VISIBLE_DEVICES=0 python evaluate_tail.py --save_folder ./ckpts_conceptnet/
     --tokenizer_name roberta-large \
     --batch_size 512
 
-CUDA_VISIBLE_DEVICES=0 python evaluate_tail.py --save_folder ./ckpts_conceptnet/k2/roberta_large \
+CUDA_VISIBLE_DEVICES=1 python evaluate_tail.py --save_folder ./ckpts_conceptnet/k2/roberta_large \
     --max_seq_length 32 \
     --temp 0.07 \
     --testfile ./preprocess/CN82k-Ind-valid.txt \
@@ -16,7 +16,7 @@ CUDA_VISIBLE_DEVICES=0 python evaluate_tail.py --save_folder ./ckpts_conceptnet/
     --tokenizer_name roberta-large \
     --batch_size 512
 
-CUDA_VISIBLE_DEVICES=0 python evaluate_tail.py --save_folder ./ckpts_conceptnet/k2/roberta_large \
+CUDA_VISIBLE_DEVICES=1 python evaluate_tail.py --save_folder ./ckpts_conceptnet/k2/roberta_large \
     --max_seq_length 32 \
     --temp 0.07 \
     --testfile ./preprocess/CN82k-Ind-test.txt \
