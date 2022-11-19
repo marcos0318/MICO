@@ -12,8 +12,8 @@ from torch.utils.data import DataLoader
 from util import load_tokenizer, AverageMeter, accuracy
 
 from model import LModel
-from loss_cs_ori import EvalLoss
-from dataset_roberta_ori import *
+from loss import EvalLoss
+from dataset import *
 import pickle
 
 
@@ -83,7 +83,7 @@ def eval(eval_loader, model, tokenizer, criterion, opt):
 
     if 'CN' in opt.testfile:
         dataset_name = 'CN'
-    else 'ATOMIC' in opt.testfile:
+    elif 'ATOMIC' in opt.testfile:
         dataset_name = 'ATOMIC'
 
     if 'train' in opt.testfile:
