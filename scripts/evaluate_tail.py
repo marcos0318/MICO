@@ -56,20 +56,20 @@ def eval(eval_loader, model, tokenizer, criterion, opt):
             print('eval batch: ', idx)
 
         # print(anchor)
-        print(anchor[0])
-        print(len(anchor))
+        # print(anchor[0])
+        # print(len(anchor))
 
         # print(pos)
 
-        print(pos[0])
-        print(len(pos))
+        # print(pos[0])
+        # print(len(pos))
    
         with torch.no_grad():
             data_time.update(time.time(), - end)
 
             features = []
             anchor_ids = tokenizer(anchor, padding=True, truncation=True, max_length=opt.max_seq_length, return_tensors='pt')
-            pos_ids = tokenizer(pos, padding=True, truncation=True, max_length=opt.max_seq_length, return_tensors='pt')
+            pos_ids = tokenizer(pos[0], padding=True, truncation=True, max_length=opt.max_seq_length, return_tensors='pt')
 
             if torch.cuda.is_available():
                 anchor_ids = {k: v.cuda() for k, v in anchor_ids.items()}
