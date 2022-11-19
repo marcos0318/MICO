@@ -2,7 +2,7 @@
 # dropout for roberta-large
 # droupot is optional for roberta-base and bert-base
 
-CUDA_VISIBLE_DEVICES=0 python main.py \
+CUDA_VISIBLE_DEVICES=1 python main.py \
     --temp 0.07 \
     --save_folder ./ckpts_conceptnet/k2/roberta_large \
     --batch_size 196 \
