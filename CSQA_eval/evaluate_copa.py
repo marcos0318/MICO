@@ -107,7 +107,7 @@ def main():
     print('loading model ...')
 
     model = LModel(opt.model)
-    pre_model = torch.load(os.path.join(opt.save_folder, 'ckpt_epoch_6.pth'))
+    pre_model = torch.load(os.path.join(opt.save_folder, 'best_model.pth'))
     model.load_state_dict(pre_model['model'])
     model = model.cuda()
 
