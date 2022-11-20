@@ -4,7 +4,7 @@ import pickle
 from collections import defaultdict
 from sklearn.metrics.pairwise import cosine_similarity
 
-path_dir = 'ckpts_atomic/k2/roberta-large'
+path_dir = 'ckpts_atomic/k2/roberta_large'
 
 with open('./{}/ATOMIC_heads_test.pkl'.format(path_dir), 'rb') as f:
     arr_heads_test = pickle.load(f)
