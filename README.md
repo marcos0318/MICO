@@ -31,20 +31,8 @@ This is the code repo for EMNLP2022 MICO: a multi-alternative contrastive learni
    ```
    cd ./scripts
 
-   CUDA_VISIBLE_DEVICES=0 python main.py \
-       --temp 0.07 \
-       --save_folder ./ckpts_atomic/k2/roberta_large \
-       --batch_size 196 \
-       --max_seq_length 32 \
-       --learning_rate 0.000005 \
-       --epochs 10 \
-       --save_freq 3 \
-       --model roberta-large \
-       --tokenizer_name roberta-large \
-       --trainfile ../preprocess/ATOMIC-Ind-train.txt \
-       --valfile ../preprocess/ATOMIC-Ind-valid.txt \
-       --dropout \
-       --k 2
+   ./train_atomic_k.sh
+   ./train_conceptnet_k.sh
    ```
 
 
@@ -62,15 +50,17 @@ This is the code repo for EMNLP2022 MICO: a multi-alternative contrastive learni
    ```
    cd ../CSQA_eval
 
-   CUDA_VISIBLE_DEVICES=0 python evaluate_socialiqa.py --save_folder ../scripts/ckpts_atomic/k2/roberta_large \
-       --max_seq_length 64 \
-       --temp 0.07 \
-       --model roberta-large \
-       --tokenizer_name roberta-large \
-       --testfile ../dataset/SIQA/socialiqa-train-dev/dev.jsonl \
-       --testlabel ../dataset/SIQA/socialiqa-train-dev/dev-labels.lst
+   ./eval_atomic_copa.sh
+   ./eval_atomic_copa_test.sh
+   ./eval_atomic_csqa.sh
+   ./eval_atomic_siqa.sh
+   ./eval_cn_copa.sh
+   ./eval_cn_copa_test.sh
+   ./eval_cn_csqa.sh
+   ./eval_cn_siqa.sh
+
    ```
-   More evaluation refers to `eval.sh`.
+
 
 ## Evaluation for Inductive CSKG Completion
 
@@ -79,7 +69,8 @@ This is the code repo for EMNLP2022 MICO: a multi-alternative contrastive learni
    First extract feature of training dataset and test dataset. This step will generate pickle files for CSKG completion
    ```
    cd ./scripts
-   sh eval_tail.sh
+   ./eval_tail_atomic.sh
+   ./eval_tail_cn.sh
    ```
 
    Then for ATOMIC19
